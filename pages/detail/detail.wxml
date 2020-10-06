@@ -1,0 +1,132 @@
+<view class="container">
+  <view class="top">
+    <view class="avatar-box" style="background: url('../../images/info_bg.png') center top no-repeat #501e19;">
+      <view class="border">
+        <image src="{{hero.img}}" mode="aspectFill"></image>
+      </view>
+      <view class="desc">
+        <image src="{{hero.icon}}"></image>
+        <text>{{hero.ChineseName}}</text>
+      </view>
+    </view>
+
+    <view class="story card">
+      <view class="title">
+        故事背景
+      </view>
+      <view class="content">
+        <image src="{{hero.story.img}}" mode="aspectFill"></image>
+        <text>
+          {{hero.story.desc}}
+        </text>
+      </view>
+    </view>
+
+    <view class="properties card">
+      <view class="title">
+        英雄属性
+      </view>
+      <view class="content">
+        <block wx:for="{{hero.properties}}" wx:key="index">
+          <view class="item">
+            <image src="{{index<3?'/images/overviewicon_'+ index +'.png':item.img}}" mode="aspectFit"></image>
+            <text>{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="talent card">
+      <view class="title">
+        天赋树
+      </view>
+      <view class="content">
+        <block wx:for="{{[25,20,15,10]}}" wx:key="index">
+          <view class="item">
+            <text>{{hero.talent[index]}}</text>
+            <view class="circle">
+              {{item}}
+            </view>
+            <text>{{hero.talent[index+1]}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="skill card">
+      <view class="title">
+        技能介绍
+      </view>
+      <view class="content">
+        <scroll-view scroll-x="true" class="scrollView">
+          <view wx:for="{{hero.skill}}" wx:key="index" class="scrollViewItem {{index === skillCur?'active':''}}" bindtap="changeCur" data-index="{{index}}">
+            <image src="{{item.img}}"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </scroll-view>
+
+        <view class="intro">
+          <image src="{{hero.skill[skillCur].img}}"></image>
+          <view class="intro_right">
+            <view class="name">{{hero.skill[skillCur].name}}</view>
+            <view class="desc">{{hero.skill[skillCur].skill_intro}}</view>
+            <view class="tip">{{hero.skill[skillCur].tip}}</view>
+            <view class="mana">
+              <image src="{{hero.skill[skillCur].mana.img}}"></image>
+              <text>{{hero.skill[skillCur].mana.text}}</text>
+            </view>
+            <view class="coolTime">
+              <image src="{{hero.skill[skillCur].coolTime.img}}"></image>
+              <text>{{hero.skill[skillCur].coolTime.text}}</text>
+            </view>
+            <view class="detail">
+              <view wx:for="{{hero.skill[skillCur].detail}}" wx:key="index" class="item">
+                <text>{{item.title}}</text>
+                <text>{{item.desc}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="bottom">
+          {{hero.skill[skillCur].bottom}}
+        </view>
+      </view>
+    </view>
+
+    <view class="equipment card">
+      <view class="title">
+        装备选择
+      </view>
+      <view class="content">
+        <block wx:for="{{hero.equipment}}" wx:key="index">
+          <view class="item">
+            <text>{{item.title}}</text>
+            <view class="images">
+              <block wx:for="{{item.imgs}}" wx:key="index" wx:for-item="img">
+                <image src="{{img}}" mode="aspectFill"></image>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="adaptation card">
+      <view class="title">
+        英雄适配
+      </view>
+      <view class="content">
+        <block wx:for="{{hero.adaptation}}" wx:key="index">
+          <view class="item">
+            <image src="{{item.img}}" mode="aspectFill"></image>
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="bottom">
+      ※所有资料均以线上游戏内数据为准※
+    </view>
+  </view>
+</view>

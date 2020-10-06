@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="title-box">
+    <text>英雄</text>Heroes
+  </view>
+  <view class="main-box">
+    <view class="sub-title">
+      <view class="item {{current === index?'active':''}}" wx:for="{{summary}}" bindtap="changeCur" data-index="{{index}}"  wx:key="index">
+        <image class="img" src="{{item.img}}"></image>
+        <text class="label">{{item.label}}</text>
+      </view>
+
+    </view>
+    <view class="sub-container" wx:for="{{summary}}" wx:key="index" hidden="{{index !== current}}">
+      <view class="sub-content">
+        <block wx:for="{{item.heros}}" wx:for-item="hero" wx:key="index">
+          <image src="{{hero.img}}" bindtap="navToDetail" data-name="{{hero.name}}"></image>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom">
+    ※所有资料均以线上游戏内数据为准※
+  </view>
+</view>

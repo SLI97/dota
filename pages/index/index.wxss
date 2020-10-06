@@ -1,0 +1,126 @@
+page {
+  background-color: #000;
+  padding-bottom: 40rpx;
+}
+
+.title-box {
+  font-size: 24rpx;
+  color: #686868;
+  background-color: #0D1012;
+  border-bottom: 8rpx solid #571C18;
+  padding: 4rpx 20rpx 20rpx;
+}
+
+.title-box text {
+  font-size: 48rpx;
+  color: #BEBEBE;
+  margin-right: 8rpx;
+  font-weight: bolder;
+}
+
+.main-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-container {
+  margin: 20rpx 0 10rpx;
+}
+
+.sub-title {
+  display: flex;
+  align-items: center;
+  /* padding:0 40rpx; */
+  margin-top: 20rpx;
+  justify-content: center;
+}
+
+.sub-title .item {
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.7);
+  transition: all 0.2s ease;
+}
+
+.sub-title .item.active {
+  transform: scale(1);
+}
+
+.sub-title .item .img {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+
+.sub-title .item:nth-child(1) .img {
+  /* box-shadow: 0 0rpx 30rpx 4rpx rgba(148, 55, 33, 0.8); */
+  animation: breathe1 2s ease-in-out infinite alternate;
+}
+
+.sub-title .item:nth-child(2) .img {
+  /* box-shadow: 0 0rpx 30rpx 4rpx rgba(75, 190, 75, 0.8); */
+  animation: breathe2 2s ease-in-out infinite alternate;
+}
+
+.sub-title .item:nth-child(3) .img {
+  /* box-shadow: 0 0rpx 30rpx 4rpx rgba(19, 131, 187, 0.8); */
+  animation: breathe3 2s ease-in-out infinite alternate;
+}
+
+.sub-title .item .label {
+  color: #616363;
+}
+
+.sub-title .item.active .label {
+  color: #ddd;
+}
+
+@keyframes breathe1{
+  0%{
+    box-shadow: 0 0rpx 90rpx 8rpx rgba(148, 55, 33, 0.8);
+  }
+  100%{
+    box-shadow: 0 0rpx 30rpx 4rpx rgba(148, 55, 33, 0.4);
+  }
+}
+
+@keyframes breathe2{
+  0%{
+    box-shadow: 0 0rpx 90rpx 8rpx rgba(75, 190, 75, 0.8);
+  }
+  100%{
+    box-shadow: 0 0rpx 30rpx 4rpx rgba(75, 190, 75, 0.4);
+  }
+}
+
+@keyframes breathe3{
+  0%{
+    box-shadow:0 0rpx 90rpx 8rpx rgba(19, 131, 187, 0.8);
+  }
+  100%{
+    box-shadow:0 0rpx 30rpx 4rpx rgba(19, 131, 187, 0.4);
+  }
+}
+
+.sub-content {
+  padding: 0 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sub-content image {
+  width: 134rpx;
+  height: 82rpx;
+  margin: 20rpx 20rpx 0 0;
+}
+
+.bottom{
+  margin-top: 30rpx;
+  color:#aaa;
+  font-size: 24rpx;
+  text-align: center;
+}
