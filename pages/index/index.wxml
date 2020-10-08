@@ -1,20 +1,52 @@
 <view class="container">
   <view class="title-box">
-    <text>英雄</text>Heroes
+    <view wx:for="{{currentList}}" class="{{current === index ?'active':''}}" data-index="{{index}}" wx:key="index"
+      bindtap="changeCurrent">
+      <text>{{item.Cname}}</text>{{item.Ename}}
+    </view>
   </view>
-  <view class="main-box">
+  <view class="hero-box" hidden="{{current !== 0}}">
     <view class="sub-title">
-      <view class="item {{current === index?'active':''}}" wx:for="{{summary}}" bindtap="changeCur" data-index="{{index}}"  wx:key="index">
+      <view class="item {{heroCurrent === index?'active':''}}" wx:for="{{heroList}}" bindtap="changeHeroCurrent"
+        data-index="{{index}}" wx:key="index">
         <image class="img" src="{{item.img}}"></image>
         <text class="label">{{item.label}}</text>
       </view>
 
     </view>
-    <view class="sub-container" wx:for="{{summary}}" wx:key="index" hidden="{{index !== current}}">
+    <view class="sub-container" wx:for="{{heroList}}" wx:key="index" hidden="{{index !== heroCurrent}}">
       <view class="sub-content">
         <block wx:for="{{item.heros}}" wx:for-item="hero" wx:key="index">
-          <image src="{{hero.img}}" bindtap="navToDetail" data-name="{{hero.name}}"></image>
+          <image src="{{hero.img}}" bindtap="JumpToHeroDetail" data-name="{{hero.name}}"></image>
         </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="item-box" hidden="{{current !== 1}}">
+    <view class="sub-title-box">
+      <view wx:for="{{itemList}}" wx:key="index" class="{{itemCurrnet === index?'active':''}}"
+        bindtap="changeItemCurrent" data-index="{{index}}">{{item.label}}
+      </view>
+    </view>
+    <view class="sub-content-box">
+      <view wx:for="{{itemList}}" wx:key="rowIndex" style="display:{{rowIndex===itemCurrnet?'flex':'none'}}"
+        wx:for-item="row" wx:for-index="rowIndex" class="shopRow">
+        <view wx:for="{{row.list}}" wx:key="columIndex" class="shopColumn" wx:for-item="colum"
+          wx:for-index="columIndex">
+          <view>
+            <view wx:if="{{rowIndex !== 2}}">
+              {{colum.title}}
+              <image src="{{colum.img}}" mode="aspectFit"></image>
+            </view>
+            <view wx:else>
+              第{{columIndex+1}}级
+            </view>
+            <block wx:for="{{colum.items}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+              <image src="{{item.img}}" mode="aspectFit" data-id="{{item.id}}" bindtap="jumpToItemDetail"></image>
+            </block>
+          </view>
+        </view>
       </view>
     </view>
   </view>

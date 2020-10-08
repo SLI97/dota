@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" wx:if="{{hero !== null}}">
   <view class="top">
     <view class="avatar-box" style="background: url('../../images/info_bg.png') center top no-repeat #501e19;">
       <view class="border">
@@ -59,14 +59,16 @@
       </view>
       <view class="content">
         <scroll-view scroll-x="true" class="scrollView">
-          <view wx:for="{{hero.skill}}" wx:key="index" class="scrollViewItem {{index === skillCur?'active':''}}" bindtap="changeCur" data-index="{{index}}">
+          <view wx:for="{{hero.skill}}" wx:key="index" class="scrollViewItem {{index === skillCur?'active':''}}"
+            bindtap="changeCur" data-index="{{index}}">
             <image src="{{item.img}}"></image>
             <text>{{item.name}}</text>
           </view>
         </scroll-view>
 
         <view class="intro">
-          <image src="{{hero.skill[skillCur].img}}"></image>
+          <image src="{{hero.skill[skillCur].img}}" bindtap="previewSkillImg" data-img="{{hero.skill[skillCur].img}}">
+          </image>
           <view class="intro_right">
             <view class="name">{{hero.skill[skillCur].name}}</view>
             <view class="desc">{{hero.skill[skillCur].skill_intro}}</view>
@@ -103,7 +105,7 @@
             <text>{{item.title}}</text>
             <view class="images">
               <block wx:for="{{item.imgs}}" wx:key="index" wx:for-item="img">
-                <image src="{{img}}" mode="aspectFill"></image>
+                <image src="{{img}}" mode="aspectFill" bindtap="jumpToItem" data-img="{{img}}"></image>
               </block>
             </view>
           </view>
@@ -117,7 +119,8 @@
       </view>
       <view class="content">
         <block wx:for="{{hero.adaptation}}" wx:key="index">
-          <view class="item">
+          <!-- <view class="item" bindtap="jumpToHero" data-img="{{item.img}}"> -->
+          <view class="item" bindtap="previewHeroImg" data-img="{{item.img}}">
             <image src="{{item.img}}" mode="aspectFill"></image>
             <text>{{item.name}}</text>
           </view>

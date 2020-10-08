@@ -1,13 +1,34 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/detail/detail"
+    "pages/hero/hero",
+    "pages/item/item",
+    "pages/astar/astar"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#0D1012",
-    "navigationBarTitleText": "Dota2英雄资料库",
+    "navigationBarTitleText": "Dota2资料库",
     "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color":"#2c2c2c",
+    "selectedColor":"#d81e06",
+    "backgroundColor":"#0D1012",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Dota",
+        "iconPath":"images/dota.png",
+        "selectedIconPath":"images/dota-active.png"
+      },
+      {
+        "pagePath": "pages/astar/astar",
+        "text": "AStar",
+        "iconPath":"images/astar.png",
+        "selectedIconPath":"images/astar-active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

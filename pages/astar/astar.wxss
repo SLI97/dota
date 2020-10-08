@@ -1,0 +1,88 @@
+page {
+  padding-bottom: 40rpx;
+  color: #6e6e6e;
+  font-size: 26rpx;
+}
+
+.container {}
+
+.map-container .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-container .item {
+  width: 40rpx;
+  height: 40rpx;
+  background: burlywood;
+  margin: 2rpx;
+  font-size: 16rpx;
+}
+
+.map-container .item.active {
+  background: red;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 30rpx;
+}
+
+.btn-container .button {
+  width: 160rpx;
+  background-color: #141516;
+  padding: 10rpx 10rpx;
+  /* margin-right: 10rpx; */
+  box-sizing: border-box;
+  border: 2rpx solid #202122;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.btn-container .button.active {
+  background: #501e19;
+  color: #c0c0c0;
+  border: 2rpx solid #60241e;
+}
+
+.buttom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 4rpx;
+  padding: 10rpx 30rpx;
+}
+
+
+.buttom .item {
+  width: 220rpx;
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #111;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.buttom .item text:nth-child(1) {
+  margin: 0 10rpx 0 0;
+  /* color: #c0c0c0; */
+}
+
+.buttom .reset {
+  background: #501e19;
+  color: #c0c0c0;
+  text-align: center;
+  border: 2rpx solid #60241e;
+  padding: 10rpx 10rpx;
+  width: 100%;
+  margin: 20rpx 10rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  font-size: 26rpx;
+  font-weight: bolder;
+}

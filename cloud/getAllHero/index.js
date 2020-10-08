@@ -59,7 +59,7 @@ exports.main = async (event, context) => {
 
     await Promise.all(AllHeroDetailListPromise).then(res => {
       // console.log(res)
-      res.forEach(item => {
+      res.forEach((item,index) => {
         const $1 = cheerio.load(item.data)
 
         //6维属性
@@ -134,6 +134,7 @@ exports.main = async (event, context) => {
 
 
         const heroObj = {
+          id: allHeroList[index].name,
           name: $1(".top_hero_card p").text().trim().match(/(?<name>[A-Za-z0-9_]+)/).groups.name.toLowerCase(),
           ChineseName: $1('.hero_name').text().trim(),
           img: dotaBaseUrl + $1('.hero_b').attr('src'),

@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="map-container">
+    <view class="row" wx:for="{{mapList}}" wx:key="index" wx:for-item="row">
+      <view class="colum" wx:for="{{row}}" wx:key="index" wx:for-item="item">
+        <view class="item" style="background:{{item.color}}" bindtap="clickItem" data-xindex="{{item.xindex}}" data-yindex="{{item.yindex}}"
+     >
+          <!-- {{item.xindex}} {{item.yindex}} {{item.id}} -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-container" hidden="{{status === 'PLAYING' || status === 'SUCCESS' || status === 'FAIL'}}">
+    <view data-type="BUILD" bindtap="changeStatus" class="button {{status === 'BUILD'?'active':''}}">选择障碍</view>
+    <view data-type="SELECT" bindtap="changeStatus" class="button {{status === 'SELECT'?'active':''}}">选择起始</view>
+    <view bindtap="start" class="button {{status === 'PLAYING'?'active':''}}">开始寻路</view>
+    <view bindtap="reset" class="button {{}}">重新游戏</view>
+    <!-- <view>
+      <slider style="width:100%;" bindchange="sliderChange" min="200" max="1000" show-value block-size="12"/>
+    </view> -->
+  </view>
+  <view class="buttom" hidden="{{status !== 'PLAYING' && status !== 'SUCCESS' && status !== 'FAIL'}}">
+    <view class="item" style="background:#e2bd3b">
+      <text>黄色:</text>
+      <text>起始点</text>
+    </view>
+    <view class="item" style="background:green">
+      <text>绿色:</text>
+      <text>结束点</text>
+    </view>
+    <view class="item" style="background:#bb1c33">
+      <text>红色:</text>
+      <text>Open集合</text>
+    </view>
+    <view class="item" style="background:#6b7c87">
+      <text>灰色:</text>
+      <text>Close集合</text>
+    </view>
+    <view class="item" style="background:#084495">
+      <text>蓝色:</text>
+      <text>当前路径</text>
+    </view>
+    <view class="item" style="background:#ddd;color:#333">
+      <text>黑色:</text>
+      <text>路障</text>
+    </view>
+    <view class="reset" bindtap="reset">
+      退出
+    </view>
+  </view>
+</view>

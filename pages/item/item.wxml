@@ -1,0 +1,53 @@
+<view class="container" wx:if="{{equipment !== null}}">
+  <view class="top">
+    <view class="left">
+      <image src="{{equipment.img}}" mode="aspectFit"></image>
+    </view>
+    <view class="right">
+      <text>{{equipment.dname}}</text>
+      <view class="cost">
+        <image src="/images/gold.png"></image>
+        <text>{{equipment.cost}}</text>
+      </view>
+      <view class="formula" wx:if="{{equipment.requirements.length > 0}}">
+        <text>配方:</text>
+        <view>
+          <block wx:for="{{equipment.requirements}}" wx:key="index">
+            <image src="{{item}}"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mid">
+    <view class="desc">
+      <view wx:for="{{equipment.desc}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class="notes">
+      <view wx:for="{{equipment.notes}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <view class="attrib">
+      <view wx:for="{{equipment.attrib}}" wx:key="index">
+        <text>{{item.label}}</text>
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+    <view class="manacool">
+      <view wx:if="{{equipment.cd}}">
+        <image src="/images/cooldown.png"></image>
+        <text>{{equipment.cd}}</text>
+      </view>
+      <view wx:if="{{equipment.mc}}">
+        <image src="/images/mana.png"></image>
+        <text>{{equipment.mc}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    {{equipment.lore}}
+  </view>
+</view>

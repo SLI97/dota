@@ -72,8 +72,15 @@
       "list": [
         {
           "id": 0,
-          "name": "pages/detail/detail",
-          "pathName": "pages/detail/detail",
+          "name": "pages/item/item",
+          "pathName": "pages/item/item",
+          "query": "id=sheepstick",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/astar/astar",
+          "pathName": "pages/astar/astar",
           "query": "name=earthshaker",
           "scene": null
         }

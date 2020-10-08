@@ -1,0 +1,142 @@
+page {
+  color: #6e6e6e;
+}
+
+.container {
+  padding: 10rpx 30rpx;
+}
+
+.top {
+  display: flex;
+  /* align-items: center; */
+}
+
+.top .left {
+  margin: 0 20rpx 0 0;
+}
+
+.top .left image {
+  width: 200rpx;
+  height: 150rpx;
+
+}
+
+/* .top .left .cost image {
+  width: 50rpx;
+  height: 34rpx;
+} */
+
+.top .right {
+  display: flex;
+  flex-direction: column;
+  color: #c0c0c0;
+  font-size: 32rpx;
+}
+
+.top .right .cost {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+
+.top .right image {
+  width: 50rpx;
+  height: 37rpx;
+  margin-right: 10rpx;
+}
+
+.top .right .formula {
+  font-size: 32rpx;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top .right .formula text {
+  margin-right: 10rpx;
+  white-space: nowrap;
+}
+
+.top .right .formula image {
+  width: 70rpx;
+  height: 53rpx;
+  margin-right: 10rpx;
+}
+
+/* 
+.top .top-desc {
+  display: flex;
+}
+
+.top .top-desc image {
+  width: 50rpx;
+  height: 37rpx;
+} */
+
+.mid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+
+.mid .desc {
+  /* width: 400rpx; */
+  margin-right: 30rpx;
+  color: #c0c0c0;
+}
+
+.mid .desc>view {
+  margin-top: 30rpx;
+}
+
+.mid .notes {
+  color: #6fe771;
+  margin-top: 20rpx;
+}
+
+.mid .attrib {
+  /* display: flex; */
+  padding: 30rpx 30rpx;
+}
+
+.mid .attrib>view {
+  margin-top: 10rpx;
+}
+
+
+.mid .attrib text:nth-child(1) {
+  margin: 0 10rpx 0 0;
+  /* color: #c0c0c0; */
+}
+
+.mid .attrib text:nth-child(2) {
+  color: #fbb040;
+  font-weight: bolder;
+}
+
+.mid .manacool {
+  display: flex;
+}
+
+.mid .manacool>view {
+  display: flex;
+  align-items: center;
+  margin-right: 100rpx;
+}
+
+/* .mid .manacool text {
+  color: #fbb040;
+} */
+
+.mid .manacool image {
+  width: 46rpx;
+  height: 46rpx;
+  margin: 20rpx;
+}
+
+.bottom {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
