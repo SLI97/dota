@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/hero/hero",
     "pages/item/item",
-    "pages/astar/astar"
+    "pages/astar/astar",
+    "pages/number/number"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -27,6 +28,12 @@
         "text": "AStar",
         "iconPath":"images/astar.png",
         "selectedIconPath":"images/astar-active.png"
+      },
+      {
+        "pagePath": "pages/number/number",
+        "text": "2048",
+        "iconPath":"images/number.png",
+        "selectedIconPath":"images/number-active.png"
       }
     ]
   },

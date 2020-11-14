@@ -7,7 +7,7 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": false,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -78,10 +78,10 @@
           "scene": null
         },
         {
-          "id": -1,
+          "id": 1,
           "name": "pages/astar/astar",
-          "pathName": "pages/astar/astar",
-          "query": "name=earthshaker",
+          "pathName": "pages/number/number",
+          "query": "",
           "scene": null
         }
       ]

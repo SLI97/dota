@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Cell": "Cell/Cell"
+  },
+  "navigationBarTitleText": "2048游戏"
+}

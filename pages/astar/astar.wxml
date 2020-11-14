@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="map-container">
+  <view class="map-container" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
     <view class="row" wx:for="{{mapList}}" wx:key="index" wx:for-item="row">
       <view class="colum" wx:for="{{row}}" wx:key="index" wx:for-item="item">
         <view class="item" style="background:{{item.color}}" bindtap="clickItem" data-xindex="{{item.xindex}}" data-yindex="{{item.yindex}}"

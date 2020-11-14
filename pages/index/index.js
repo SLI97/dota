@@ -17,7 +17,7 @@ Page({
         Ename: 'Items',
       },
     ],
-    current: 1,
+    current: 0,
     heroCurrent: 0,
     itemCurrnet: 0
   },

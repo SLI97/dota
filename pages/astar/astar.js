@@ -19,6 +19,9 @@ const GAME_STATUS = {
 
 let buildLock = true
 
+const frequency = 200
+let tempList = []
+
 Page({
   data: {
     colum: 16,
@@ -34,8 +37,7 @@ Page({
     endItem: null,
     currentItem: null,
     shortItem: null,
-    status: GAME_STATUS.IDLE,
-    frequency: 200,
+    status: GAME_STATUS.IDLE
 
   },
   onLoad() {
@@ -97,7 +99,7 @@ Page({
         console.log("end")
       }
       this.checkArrive()
-    }, this.data.frequency)
+    }, frequency)
   },
   findPath() {
     this.getShortPathItem()
@@ -342,11 +344,40 @@ Page({
     this.creatScene()
   },
   sliderChange(e) {
+    // const {
+    //   value
+    // } = e.detail
+    // this.setData({
+    //   frequency: value
+    // })
+  },
+  touchstart(e) {
+    tempList = []
+    // console.log(e)
+  },
+  touchmove(e) {
     const {
-      value
-    } = e.detail
+      status,
+      obstaclesList,
+      mapList
+    } = this.data
+    if (status === GAME_STATUS.BUILD) {
+      const {
+        pageX,
+        pageY
+      } = e.touches[0]
+      const item = mapList[Math.floor(pageY / 22)][Math.floor(pageX / 22)]
+      if (!obstaclesList.includes(item) && !tempList.includes(item)) {
+        tempList.push(item)
+      }
+    }
+  },
+  touchend(e) {
+    const {
+      obstaclesList
+    } = this.data
     this.setData({
-      frequency: value
+      obstaclesList: obstaclesList.concat(tempList)
     })
   }
 })

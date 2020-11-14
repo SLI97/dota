@@ -1,0 +1,24 @@
+<view class="container" bindtouchstart="touchstart" bindtouchend="touchend">
+  <view class="btn-container">
+    <button bindtap="restart">Restart</button>
+  </view>
+  <view class="grid-container">
+    <view class="grid-row" wx:for="{{4}}" wx:key="index">
+      <Cell my-class="grid-cell" />
+      <Cell my-class="grid-cell" />
+      <Cell my-class="grid-cell" />
+      <Cell my-class="grid-cell" />
+    </view>
+
+    <view wx:for="{{tiles}}" wx:key="id" class="tile" animation="{{item.animation}}"
+      style="top:{{item.top}}rpx;left:{{item.left}}rpx;font-size:{{item.fontSize}}rpx;background-color:{{item.bgColor}};opacity:{{item.opacity}};color:{{item.color}}">
+      {{item.value}}
+    </view>
+  </view>
+
+  <view class="overlay" wx:if="{{showOverlay}}" bindtap="restart">
+    <view class="overlayMessage">
+      {{message}}
+    </view>
+  </view>
+</view>
