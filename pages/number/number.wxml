@@ -11,7 +11,7 @@
     </view>
 
     <view wx:for="{{tiles}}" wx:key="id" class="tile" animation="{{item.animation}}"
-      style="top:{{item.top}}rpx;left:{{item.left}}rpx;font-size:{{item.fontSize}}rpx;background-color:{{item.bgColor}};opacity:{{item.opacity}};color:{{item.color}}">
+      style="top:{{item.top}}px;left:{{item.left}}px;font-size:{{item.fontSize}}rpx;background-color:{{item.bgColor}};opacity:{{item.opacity}};color:{{item.color}}">
       {{item.value}}
     </view>
   </view>

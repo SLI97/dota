@@ -1,7 +1,7 @@
-import GameBoard from './GameBoard'
+import GameBoard from './MyClass/GameBoard'
 
-const BOARD_GUTTER = 24;
-const CELL_SIZE = 120;
+const BOARD_GUTTER = 12;
+const CELL_SIZE = 60;
 
 const styles = {
   tile2: {
@@ -62,14 +62,13 @@ const getPageXY = (event) => {
 Page({
   data: {
     tiles: [],
-    message: '',
+    message: 'Game Oever',
     showOverlay: false,
   },
   onLoad() {
     // this.adapter()
   },
   onReady() {
-    this.adapter()
     this.restart()
   },
   adapter() {
@@ -101,14 +100,14 @@ Page({
         //   .step()
       } else {
         animation
-          .top(this.getPosition(i.toRow()) * unitFormat)
-          .left(this.getPosition(i.toColumn()) * unitFormat)
+          .top(this.getPosition(i.toRow()))
+          .left(this.getPosition(i.toColumn()))
           .opacity(1)
           .step()
       }
       if (isMerge) {
         animation
-          .scale(1.5, 1.5)
+          .scale(1.6, 1.6)
           .step()
         animation
           .scale(1, 1)

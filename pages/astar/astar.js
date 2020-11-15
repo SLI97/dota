@@ -20,6 +20,7 @@ const GAME_STATUS = {
 let buildLock = true
 
 const frequency = 200
+let itemList = []
 let tempList = []
 
 Page({
@@ -27,7 +28,6 @@ Page({
     colum: 16,
     row: 20,
     mapList: [],
-    itemList: [],
     activeList: [],
     openList: [],
     closeList: [],
@@ -49,7 +49,7 @@ Page({
       row
     } = this.data
     const mapList = []
-    const itemList = []
+    itemList = []
 
     for (let i = 0; i < row; i++) {
       mapList.push([])
@@ -74,7 +74,6 @@ Page({
       }
     }
     this.setData({
-      itemList,
       mapList,
     })
     this.setItemColor()
@@ -83,6 +82,7 @@ Page({
     if (this.data.startItem == null || this.data.endItem == null) {
       wx.showToast({
         title: '请选择起始点！',
+        icon: 'none',
       })
       return
     }
@@ -304,7 +304,6 @@ Page({
       activeList,
       openList,
       closeList,
-      itemList
     } = this.data
     for (let i = 0; i < itemList.length; i++) {
       const item = itemList[i]

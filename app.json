@@ -1,39 +1,47 @@
 {
-  "pages":[
-    "pages/index/index",
+  "pages": [
+    "pages/dota2/dota2",
+    "pages/data/data",
     "pages/hero/hero",
     "pages/item/item",
     "pages/astar/astar",
-    "pages/number/number"
+    "pages/number/number",
+    "pages/life/life"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0D1012",
-    "navigationBarTitleText": "Dota2资料库",
-    "navigationBarTextStyle":"white"
+    "navigationBarTitleText": "Dota2",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color":"#2c2c2c",
-    "selectedColor":"#d81e06",
-    "backgroundColor":"#0D1012",
+    "color": "#2c2c2c",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#0D1012",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/dota2/dota2",
         "text": "Dota",
-        "iconPath":"images/dota.png",
-        "selectedIconPath":"images/dota-active.png"
+        "iconPath": "images/dota.png",
+        "selectedIconPath": "images/dota-active.png"
       },
       {
         "pagePath": "pages/astar/astar",
         "text": "AStar",
-        "iconPath":"images/astar.png",
-        "selectedIconPath":"images/astar-active.png"
+        "iconPath": "images/astar.png",
+        "selectedIconPath": "images/astar-active.png"
       },
       {
         "pagePath": "pages/number/number",
         "text": "2048",
-        "iconPath":"images/number.png",
-        "selectedIconPath":"images/number-active.png"
+        "iconPath": "images/number.png",
+        "selectedIconPath": "images/number-active.png"
+      },
+      {
+        "pagePath": "pages/life/life",
+        "text": "Life",
+        "iconPath": "images/life.png",
+        "selectedIconPath": "images/life-active.png"
       }
     ]
   },

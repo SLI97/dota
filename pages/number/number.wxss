@@ -14,15 +14,19 @@
 }
 
 .btn-container button {
-  flex-wrap: 0;
-  /* height: 50px; */
+  background: #8f7a66;
+  border-radius: 6rpx;
+  text-decoration: none;
+  color: #f9f6f2;
+  display: block;
+  text-align: center;
 }
 
 .grid-container {
-  width: 600rpx;
-  height: 600rpx;
+  width: 300px;
+  height: 300px;
   background: #bbada0;
-  padding: 26rpx;
+  padding: 12px;
   box-sizing: border-box;
   position: relative;
   align-items: center;
@@ -30,7 +34,7 @@
 
 .grid-container .grid-row {
   display: flex;
-  margin-bottom: 24rpx;
+  margin-bottom: 12px;
 }
 
 .grid-row:last-child {
@@ -38,11 +42,12 @@
 }
 
 .grid-container .grid-cell {
-  width: 120rpx;
-  height: 120rpx;
+  width: 60px;
+  height: 60px;
   background: #ede0c8;
   box-sizing: border-box;
-  margin-right: 24rpx !important;
+  margin-right: 12px !important;
+  border-radius: 10rpx;
 }
 
 .grid-cell:last-child {
@@ -51,8 +56,8 @@
 
 .tile {
   position: absolute;
-  width: 120rpx;
-  height: 120rpx;
+  width: 60px;
+  height: 60px;
   background-color: #ddccbb;
   border-radius: 10rpx;
   flex: 1;
@@ -84,7 +89,9 @@
   z-index: 2;
 }
 
-.overlayMessage{
-  font-size: 40rpx;
-  margin-bottom: 40rpx,
+.overlayMessage {
+  font-size: 80rpx;
+  margin-bottom: 40rpx;
+  color: #776e65;
+  font-weight: bold;
 }

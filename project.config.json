@@ -72,8 +72,8 @@
       "list": [
         {
           "id": 0,
-          "name": "pages/item/item",
-          "pathName": "pages/item/item",
+          "name": "pages/life/life",
+          "pathName": "pages/life/life",
           "query": "id=sheepstick",
           "scene": null
         },

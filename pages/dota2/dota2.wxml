@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="logo-wrap">
+    <image class="logo" src="/images/dota2-logo.png"></image>
+    <view class="btn" bindtap="jumpData">数据库</view>
+  </view>
+  <view class="dota-row">
+    <image src="/images/kaer.png" mode="aspectFit" class="fadeIn"></image>
+    <view class="reward-container">
+      <text class="reward-name">最甜蜜的奖励</text>
+      <text class="reward-label">在夜魇暗潮活动期间不论是游玩普通Dota 2比赛还是夜魇暗潮都可以获得夜魇暗潮积分</text>
+    </view>
+    <image src="/images/kaer-ball.png" mode="aspectFit" class="kaer-ball float"></image>
+  </view>
+  <view class="dota-row" wx:for="{{rowData}}" wx:key="index">
+    <view wx:if="{{listIndex > index}}" class="wrap fadeIn">
+      <view class="main">
+        <image src="{{item.main.src}}" mode="aspectFit"></image>
+        <view class="reward-container">
+          <text class="reward-name">{{item.main.name}}</text>
+          <text class="reward-label">{{item.main.label}}</text>
+        </view>
+      </view>
+      <view class="dota-col left">
+        <image src="{{item.left.src}}" mode="aspectFit" class="float"></image>
+        <view class="reward-container">
+          <text class="reward-name">{{item.left.name}}</text>
+          <text class="reward-label">{{item.left.label}}</text>
+        </view>
+      </view>
+      <view class="dota-col right">
+        <image src="{{item.right.src}}" mode="aspectFit" class="float"></image>
+        <view class="reward-container">
+          <text class="reward-name">{{item.right.name}}</text>
+          <text class="reward-label">{{item.right.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="map-container">
+    <view class="row" wx:for="{{mapList}}" wx:key="index" wx:for-item="row">
+      <view class="colum" wx:for="{{row}}" wx:key="index" wx:for-item="item">
+        <view class="item" bindtap="clickItem" data-xindex="{{item.xindex}}" data-yindex="{{item.yindex}}"
+          style="background:{{item.alive?'#000':'#D8D8D8'}}">
+          <!-- {{item.xindex}} {{item.yindex}} {{item.id}} -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-container">
+    <view class="button" bindtap="showCase">选择案例</view>
+    <view class="button" bindtap="showTips">游戏规则</view>
+    <view bindtap="start" class="button">开始游戏</view>
+    <view class="button" bindtap="reset">退出</view>
+  </view>
+
+  <view class="case-overlay" wx:if="{{showCaseOverlay}}" bindtap="closeCase">
+    <view class="overlayMessage">
+      <scroll-view scroll-y="true" style="height: 1000rpx;">
+        <view class="case-wrap" wx:for="{{caseList}}" wx:key="index" catchtap="selectCase" data-index="{{index}}">
+          <view class="title">
+            {{item.title}}
+          </view>
+          <image src="{{item.src}}" mode="aspectFit"></image>
+          <view class="btn">选择案例</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="tip-overlay" wx:if="{{showTipsOverlay}}" bindtap="closeTips">
+    <view class="overlayMessage">
+      <view class="title">
+        每个细胞死或活的状态由它周围的八个细胞所决定。
+      </view>
+      <view>1. “人口过少”：任何活细胞如果活邻居少于2个，则死掉。</view>
+      <view>2. “正常”：任何活细胞如果活邻居为2个或3个，则继续活。</view>
+      <view>3. “人口过多”：任何活细胞如果活邻居大于3个，则死掉。</view>
+      <view>4. “繁殖”：任何死细胞如果活邻居正好是3个，则活过来。</view>
+    </view>
+  </view>
+</view>
