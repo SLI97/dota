@@ -1,0 +1,13 @@
+<import src="/utils/wxParse/wxParse.wxml"></import>
+<view class="container detail">
+  <scroll-view wx:if="{{isLoaded}}" scroll-y="{{true}}" bindscrolltolower="scrollBottom" class="schedule-scroll"
+    bindscroll="onViewScroll" scroll-top="{{topNum}}" scroll-with-animation="{{true}}"
+    scroll-animation-duration="{{600}}">
+    <view class="detail-wrapper">
+      <view class="bg" style="background: url('/images/detail-bg.png') center/cover no-repeat;" />
+
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+    </view>
+  </scroll-view>
+  <my-backtop bindBackTop="backTop" showBackTop="{{showBackTop}}"/>
+</view>

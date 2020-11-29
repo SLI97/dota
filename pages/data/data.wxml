@@ -1,4 +1,5 @@
-<view class="container">
+<view class="container data">
+  <view class="bg" style="background: url('/images/data-bg.png') center/cover no-repeat;" />
   <view class="title-box">
     <view wx:for="{{currentList}}" class="{{current === index ?'active':''}}" data-index="{{index}}" wx:key="index"
       bindtap="changeCurrent">

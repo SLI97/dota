@@ -83,6 +83,20 @@
           "pathName": "pages/number/number",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/news/news",
+          "pathName": "pages/news/news",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "id= https://www.dota2.com.cn/article/details/20201127/218681.html",
+          "scene": null
         }
       ]
     }

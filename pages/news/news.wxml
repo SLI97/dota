@@ -1,0 +1,33 @@
+<view class="news container">
+  <view class="bg" style="background: url('/images/news-bg.png') center/cover no-repeat;" />
+  <scroll-view wx:if="{{isLoaded}}" scroll-y="{{true}}" bindscrolltolower="scrollBottom" class="schedule-scroll"
+    bindscroll="onViewScroll" scroll-top="{{topNum}}" scroll-with-animation="{{true}}"
+    scroll-animation-duration="{{600}}">
+
+    <view class="category">
+      <view wx:for="{{cateList}}" class="category__item {{typeIndex === index?'category__item--active':''}}"
+        wx:key="*this" data-index="{{index}}" bindtap="changeCategory">{{item}}</view>
+    </view>
+    <view class="recommend">
+      <view wx:for="{{newsList}}" class="recommend__item" wx:key="*this" data-index="{{index}}" bindtap="jumpDetail">
+        <view class="recommend__imgwrap">
+          <image mode="aspectFill" src="{{item.img}}" lazy-load="{{true}}" />
+        </view>
+        <view class="recommend__title">{{item.title}}</view>
+        <view class="recommend__content">{{item.content}}</view>
+        <view class="recommend__meta">
+          <view class="recommend__date" wx:if="{{item.date}}">{{item.date}}</view>
+          <!-- <view class="recommend__category {{item.cateKey ===3?'news__cate-3':'news__cate-2'}}">{{item.category}}</view> -->
+        </view>
+      </view>
+    </view>
+    <!-- <view wx:if="{{loading && newsList.length > 0}}" class="news__more">加载中...</view> -->
+    <view class="news__more" wx:if="{{newsList.length < total}}">
+      <view class="text" wx:if="{{loading && newsList.length > 0}}">
+        加载中...
+      </view>
+    </view>
+
+  </scroll-view>
+  <my-backtop bindBackTop="backTop" showBackTop="{{showBackTop}}"/>
+</view>

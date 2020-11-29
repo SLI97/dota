@@ -1,39 +1,56 @@
-<view class="container">
-  <view class="logo-wrap">
-    <image class="logo" src="/images/dota2-logo.png"></image>
-    <view class="btn" bindtap="jumpData">数据库</view>
-  </view>
-  <view class="dota-row">
-    <image src="/images/kaer.png" mode="aspectFit" class="fadeIn"></image>
-    <view class="reward-container">
-      <text class="reward-name">最甜蜜的奖励</text>
-      <text class="reward-label">在夜魇暗潮活动期间不论是游玩普通Dota 2比赛还是夜魇暗潮都可以获得夜魇暗潮积分</text>
+<view class="container home">
+  <view class="bg" style="background: url('/images/home-bg.png') center/cover no-repeat;" />
+  <view class="logo" style="background: url('/images/logo.png') center/contain no-repeat;" />
+  <view class="swiper-container">
+    <swiper class="swiper-wrapper" current="{{currentSwiperIndex}}" bindchange="changeCurSwiper"
+      indicator-dots="{{false}}" autoplay="{{isAuto}}" interval="5000">
+      <block wx:for="{{5}}" wx:key="*this">
+        <swiper-item key="swiper-item-{{index}}">
+          <image mode="aspectFill" src="{{'/images/banner' + (index + 1) + '.jpg'}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="swiper-pagination">
+      <view class="pagination-item {{currentSwiperIndex === index?'active':''}}" wx:for="{{5}}" wx:key="*this"
+        bindtap="changeActionSwiper" data-index="{{index}}">
+        <image src="{{'/images/banner' + (index + 1) + '.jpg'}}" class="img" mode="aspectFill" lazy-load="{{true}}" />
+      </view>
     </view>
-    <image src="/images/kaer-ball.png" mode="aspectFit" class="kaer-ball float"></image>
   </view>
-  <view class="dota-row" wx:for="{{rowData}}" wx:key="index">
-    <view wx:if="{{listIndex > index}}" class="wrap fadeIn">
-      <view class="main">
-        <image src="{{item.main.src}}" mode="aspectFit"></image>
-        <view class="reward-container">
-          <text class="reward-name">{{item.main.name}}</text>
-          <text class="reward-label">{{item.main.label}}</text>
+  <view class="swiper-container swiper-container__help">
+    <swiper class="swiper-wrapper" indicator-dots="{{false}}" autoplay="{{true}}" interval="5000"
+      style="background:url('/images/help-bg.jpg')  center/cover no-repeat">
+      <swiper-item key="swiper-item-0">
+        <view class="help__container">
+          <view class="help__title">什么是DOTA2?</view>
+          <view class="help__sub__title">英雄对战始祖</view>
+          DOTA2是由DotA之父Icefrog主创打造的唯一正统续作，其完整继承了原作DotA超过一百位的英雄。DOTA2的玩法和DotA完全相同，通过顶级的系统、美术和功能，呈现出了超越经典且原味十足的体验感觉。拥有顶级品质，竞争力十足的DOTA2已然主宰了时代的脉动，其必将让所有DOTAer的骄傲、荣耀与执着得到承载，延续永恒。为信仰守护，开始新的战斗吧！
         </view>
-      </view>
-      <view class="dota-col left">
-        <image src="{{item.left.src}}" mode="aspectFit" class="float"></image>
-        <view class="reward-container">
-          <text class="reward-name">{{item.left.name}}</text>
-          <text class="reward-label">{{item.left.label}}</text>
+      </swiper-item>
+      <swiper-item key="swiper-item-1">
+        <view class="help__container">
+          <view class="help__title">英雄对战游戏</view>
+          <view class="help__sub__title">经典玩法 十年沉淀</view>
+          DOTA2的世界由天辉和夜魇两个阵营所辖区域组成，有上、中、下三条主要的作战道路相连接，中间以河流为界。在这个充满神秘和挑战的世界中，通常每个阵营分别由五位玩家所扮演的英雄担任守护者，他们将以守护己方远古遗迹并摧毁敌方远古遗迹为使命，通过提升等级、赚取金钱、购买装备和击杀敌方英雄等诸多竞技手段。与对手斗智斗勇，为了最终的胜利而战！
         </view>
-      </view>
-      <view class="dota-col right">
-        <image src="{{item.right.src}}" mode="aspectFit" class="float"></image>
-        <view class="reward-container">
-          <text class="reward-name">{{item.right.name}}</text>
-          <text class="reward-label">{{item.right.label}}</text>
+      </swiper-item>
+      <swiper-item key="swiper-item-2">
+        <view class="help__container">
+          <view class="help__title">正统电子竞技血统</view>
+          <view class="help__sub__title">百位英雄 待你征招</view>
+          DOTA2是一个充满技巧、策略和变化的电子竞技游戏。在战斗开始前，所有人将会从一百多个英雄中选择一个，每个英雄都会有独特的能力，优点与弱点。通过击杀小兵或对方英雄获得奖励从而提升自己的装备和等级。随着英雄力量增强，可以集合团队进攻对方三条线上的防御塔，然后深入对方基地并摧毁对方兵营，最后当一方的遗迹被彻底摧毁时，游戏结束。这就是DOTA2！
         </view>
-      </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="jump__container" style="background:url('/images/home-news.jpg')  center/cover no-repeat" bindtap="jumpNews">
+    <view class="text">
+      作战资讯
+    </view>
+  </view>
+  <view class="jump__container" style="background:url('/images/home-hero.jpg')  center/cover no-repeat" bindtap="jumpHero">
+    <view class="text">
+      英雄物品
     </view>
   </view>
 </view>

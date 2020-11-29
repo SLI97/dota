@@ -1,0 +1,17 @@
+.backTop {
+  position: fixed;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  box-shadow: 0rpx 0rpx 28rpx 0rpx rgba(18, 18, 18, 0.04);
+  z-index: 999;
+  right: 54rpx;
+  bottom: 108rpx;
+  transition: all 0.2s ease-out;
+  opacity: 0;
+  cursor: auto;
+}
+
+.backTop.backTop.backTop--show {
+  opacity: 1;
+}

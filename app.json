@@ -4,9 +4,10 @@
     "pages/data/data",
     "pages/hero/hero",
     "pages/item/item",
+    "pages/news/news",
     "pages/astar/astar",
-    "pages/number/number",
-    "pages/life/life"
+    "pages/life/life",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,25 +22,31 @@
     "list": [
       {
         "pagePath": "pages/dota2/dota2",
-        "text": "Dota",
+        "text": "官网首页",
         "iconPath": "images/dota.png",
         "selectedIconPath": "images/dota-active.png"
       },
       {
+        "pagePath": "pages/news/news",
+        "text": "资讯攻略",
+        "iconPath": "images/news.png",
+        "selectedIconPath": "images/news-active.png"
+      },
+      {
+        "pagePath": "pages/data/data",
+        "text": "英雄物品",
+        "iconPath": "images/hero.png",
+        "selectedIconPath": "images/hero-active.png"
+      },
+      {
         "pagePath": "pages/astar/astar",
-        "text": "AStar",
+        "text": "寻路游戏",
         "iconPath": "images/astar.png",
         "selectedIconPath": "images/astar-active.png"
       },
       {
-        "pagePath": "pages/number/number",
-        "text": "2048",
-        "iconPath": "images/number.png",
-        "selectedIconPath": "images/number-active.png"
-      },
-      {
         "pagePath": "pages/life/life",
-        "text": "Life",
+        "text": "生命游戏",
         "iconPath": "images/life.png",
         "selectedIconPath": "images/life-active.png"
       }

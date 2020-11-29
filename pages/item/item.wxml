@@ -1,4 +1,5 @@
-<view class="container" wx:if="{{equipment !== null}}">
+<view class="container Myitem" wx:if="{{equipment !== null}}">
+  <view class="bg" style="background: url('/images/item-bg.png') center/cover no-repeat;" />
   <view class="top">
     <view class="left">
       <image src="{{equipment.img}}" mode="aspectFit"></image>

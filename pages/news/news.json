@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": " 资讯攻略",
+  "usingComponents": {
+    "my-backtop": "../../components/backtop/backtop"
+  }
+}

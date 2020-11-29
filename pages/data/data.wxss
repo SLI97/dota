@@ -2,6 +2,16 @@ page {
   padding-bottom: 40rpx;
 }
 
+.container.data .bg {
+  content: " ";
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .title-box {
   font-size: 24rpx;
   color: #2c2c2c;

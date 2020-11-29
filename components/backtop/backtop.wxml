@@ -1,0 +1,4 @@
+<view>
+  <view class="backTop {{showBackTop?'backTop--show':''}}" catchtap="backTop"
+    style=" background: #fff url('/images/backtop.png') no-repeat center/48rpx 48rpx;" />
+</view>
